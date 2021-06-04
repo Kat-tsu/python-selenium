@@ -1,0 +1,7 @@
+create a crawler to fetch data from a search made on google 
+from selenium.webdriver.chrome.option import Options 
+
+how to define browser option to webdriver 
+chrome_option = Option()
+chrome_option.add_argument("--headless") #hiding browser  
+
