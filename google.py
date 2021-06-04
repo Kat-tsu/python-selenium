@@ -12,6 +12,22 @@ PATH = './chromedriver';
 driver  = webdriver.Chrome(executable_path=PATH) 
 driver.get('https://google.com')
 
-body = driver.find_element_by_tag_name('input')
-print(body)
-print(body.text)
+inpu = driver.find_element_by_tag_name("input")
+inpu.send_keys("share house")
+inpu.send_keys(Keys.RETURN)
+
+try:
+    element = WebDriverWait(driver,3).until(
+        EC.presence_of_element_located((By.ID,"main"))
+    )
+    search = WebDriverWait(driver,1).until(
+        EC.presence_of_element_located((By.ID,"rso"))
+    )
+    s = search.find_elements_by_tag_name("div")
+    for elements in list(s):
+        print(elements.text) 
+    # print(element.text)
+    # print(inpu.text)
+
+finally: 
+    driver.quit()
