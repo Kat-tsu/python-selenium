@@ -13,7 +13,7 @@ driver  = webdriver.Chrome(executable_path=PATH)
 driver.get('https://google.com')
 
 inpu = driver.find_element_by_tag_name("input")
-inpu.send_keys("share house")
+inpu.send_keys("qquant")
 inpu.send_keys(Keys.RETURN)
 
 try:
